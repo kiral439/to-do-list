@@ -24,4 +24,4 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Project deployment
-Check https://hidden-woodland-81813.herokuapp.com/
+View https://hidden-woodland-81813.herokuapp.com/
