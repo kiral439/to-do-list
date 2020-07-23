@@ -6,7 +6,7 @@
     </h1>
     <form class="form" @submit.prevent="addTodoList">
       <label>
-        <input class="checkbox v-align" v-bind="lists.done" type="checkbox" />
+        <input class="checkbox v-align" v-model="lists.done" type="checkbox" />
         <BaseIcon
           class="v-align"
           :class="{ checked: lists.done }"

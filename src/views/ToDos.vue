@@ -2,6 +2,7 @@
   <div class="container">
     <input class="text" v-model="name" placeholder="New Todo" />
     <button @click="addTodo"><BaseIcon name="edit" /></button>
+    <button><BaseIcon name="save" /></button>
     <ToDoCard
       v-for="(toDo, index) in toDos"
       :key="index"
@@ -14,8 +15,10 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
+
 import ToDoCard from "@/components/ToDoCard.vue";
 import BaseIcon from "@/components/BaseIcon.vue";
+// import TodoService from "@/services/TodoService.js";
 
 import { mapState } from "vuex";
 
@@ -30,7 +33,29 @@ export default {
     ToDoCard,
     BaseIcon
   },
+  /*
+  created() {
+    TodoService.getTodos()
+      .then(response => {
+        this.$store.dispatch("fetchEvents", response.data);
+      })
+      .catch(error => {
+        console.log("There was an error:  " + error);
+      });
+  },
+  */
   methods: {
+    /*
+    saveCurrentTodo: function() {
+      TodoService.postTodo(this.toDos)
+        .then(() => {
+          console.log("Success");
+        })
+        .catch(error => {
+          console.log("Error " + error);
+        });
+    },
+    */
     addTodo: function() {
       if (this.name === "") {
         this.name = "New Todo";

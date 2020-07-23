@@ -23,6 +23,11 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
+    INIT_TODOS: function(state, value) {
+      for (var val in value) {
+        state.toDos.push(value[val]);
+      }
+    },
     ADD_TODO: function(state, value) {
       state.toDos.push(value);
     },
@@ -37,6 +42,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    fetchEvents: function({ commit }, value) {
+      commit("INIT_TODOS", value);
+    },
     updateToDo: function({ commit }, value) {
       commit("ADD_TODO", value);
     },
